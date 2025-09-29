@@ -6,7 +6,7 @@ import ApplicationProcess from '../components/Home Components/ApplicationProcess
 import IndustrialSectors from '../components/Home Components/IndustrialSectors'
 import Salientfeatures from '../components/Home Components/Salientfeatures'
 import StatisticsSection from '../components/Home Components/StatisticsSection'
-import Testimonial from '../components/Home Components/testimonial'
+import Testimonial from '../components/Home Components/Testimonial'
 import ImportantLinks from '../components/Home Components/Importantlink'
 import Footer from '../components/Footer'
 import SectorWheel from '../components/Home Components/SectorWheel'
