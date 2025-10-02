@@ -14,8 +14,8 @@ export default function BannerSection() {
     return (
         <section className="relative banner-section z-10">
             {/* Navbar */}
-            <div className="primarymenu absolute m-auto z-9 right-0 px-5 ">
-                <nav className="relative flex items-center justify-between">
+            <div className="primarymenu sm:absolute initial  m-auto z-9 right-0 px-5 ">
+                <nav className="relative sm:flex block items-center justify-between">
                     {/* Mobile Menu Toggle */}
                     <button
                         className="lg:hidden text-xl px-3 py-2 bg-transparent border-0 border-transparent rounded-[4px] text-white"
@@ -26,7 +26,7 @@ export default function BannerSection() {
 
                     {/* Menu */}
                     <ul
-                        className={`flex-col lg:flex lg:flex-row lg:items-center lg:space-x-6 ${menuOpen ? "flex" : "hidden"
+                        className={`flex-col lg:flex lg:flex-row lg:items-center lg:space-x-6  ${menuOpen ? "flex" : "hidden"
                             }`}
                     >
                         <li className="relative group text-white hover:bg-white hover:text-black">
@@ -179,14 +179,13 @@ export default function BannerSection() {
             {/* Banner */}
             <img src={banner} alt="Banner" className="w-full relative z-0" />
 
-            {/* Leader Section */}
             <div className="leader absolute left-0 top-0 w-[250px] z-1">
                 <ul>
                     <li className="relative p-6">
                         <div className="pmmodi relative z-5 bg-white rounded-[50%] text-center w-[185px] h-[185px] mx-auto flex flex-col items-center justify-center shadow px-6">
-                            <img src={pmModi} alt="PM Modi" className="h-[90px]" />
-                            <h4 className="font-bakbak text-sm font-normal mb-0 text-[#1d113e]">Narendra Modi</h4>
-                            <p className="text-xs font-normal text-wrap text-[#1d113e]">Hon'ble Prime Minister of India</p>
+                            <img src={pmModi} alt="PM Modi" className="sm:h-[90px] h-[70px]" />
+                            <h4 className="font-bakbak text-sm font-normal mb-0 sm:text-[#1d113e] text-white">Narendra Modi</h4>
+                            <p className="text-xs font-normal text-wrap sm:text-[#1d113e] text-white">Hon'ble Prime Minister of India</p>
                         </div>
                         <span className="shape-1 absolute top-0 left-0 z-0 opacity-50">
                             <img src={shape1} alt="shape" className="relative" />
@@ -197,9 +196,9 @@ export default function BannerSection() {
 
                     <li className="relative p-6">
                         <div className="pmmodi relative z-5 bg-white rounded-[50%] text-center w-[185px] h-[185px] mx-auto flex flex-col items-center justify-center shadow px-6">
-                            <img src={homeYogi} alt="CM Yogi" className="h-[90px]" />
-                            <h4 className="font-bakbak text-sm font-normal mb-0 text-[#1d113e]">Yogi Adityanath</h4>
-                            <p className="text-xs font-normal text-wrap text-[#1d113e]">
+                            <img src={homeYogi} alt="CM Yogi" className="sm:h-[90px] h-[70px]" />
+                            <h4 className="font-bakbak text-sm font-normal mb-0 sm:text-[#1d113e] text-white">Yogi Adityanath</h4>
+                            <p className="text-xs font-normal text-wrap sm:text-[#1d113e] text-white">
                                 Hon’ble Chief Minister of Uttar Pradesh
                             </p>
                         </div>

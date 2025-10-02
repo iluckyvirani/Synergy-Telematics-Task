@@ -3,6 +3,7 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 :root {
@@ -12,6 +13,7 @@
   --color-charcoal: #2F2F2F;
   --color-text-black: #2F2F2F;
   --bakbak-one-regular: 'Bakbak One', cursive;
+  --roboto-condensed: 'Roboto Condensed', sans-serif;
   --card: 0 0% 100%;
   --card-foreground: 215 25% 27%;
 }
@@ -72,6 +74,10 @@ button {
   font-family: var(--bakbak-one-regular);
 }
 
+.font-roboto-condensed {
+  font-family: var(--roboto-condensed);
+}
+
 /* navbar */
 
 header {
@@ -81,6 +87,17 @@ header {
   overflow: hidden;
 }
 
+
+
+.logo::after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  bottom: -4px;
+  height: 1px;
+  width: 150px;
+  background: rgba(255, 255, 255, 0.5);
+}
 
 /* banner section  */
 
@@ -129,16 +146,19 @@ header {
   align-items: flex-start;
 }
 
+
 .leader>ul {
   padding: 0px 0px 0px 15px;
   list-style: none;
   margin: 50px 0px 0px 0px;
 }
 
+
 .leader li {
   padding: 8%;
   position: relative;
 }
+
 
 .banner-section img {
   max-width: 100%;
@@ -178,6 +198,8 @@ header {
   top: 0px;
   animation: float-bob-y 5s ease-in-out infinite;
 }
+
+
 
 
 .leader .circle-2 {
@@ -406,6 +428,7 @@ header {
   background: no-repeat padding-box padding-box rgba(255, 255, 255, 0.6);
 }
 
+
 /* Hexagon Base */
 .hexagon {
   width: 100px;
@@ -571,13 +594,13 @@ header {
 
 
 
-/* Custom hover effect for policy cards */
+
+
 .policy-card:hover {
   border-bottom: 4px solid #ff5722;
   transform: translateY(-2px);
 }
 
-/* Smooth transitions for all interactive elements */
 .policy-card {
   position: relative;
   border-bottom: 4px solid transparent;
@@ -1067,4 +1090,179 @@ img.process_shape_10 {
 .swiper-pagination-bullet-active {
   background: #f14857;
   opacity: 1;
+}
+
+
+.wheel-group {
+  transition: transform 1s ease-in-out;
+  transform-origin: 250px 250px;
+}
+
+
+
+.Layer_1 {
+  width: 170%;
+  padding-top: 0px;
+  position: relative;
+  left: -330px;
+  top: -14px;
+}
+
+
+.Layer_1 svg:not(:root) {
+  overflow: hidden;
+}
+
+/* :not(svg) {
+    transform-origin: 0px 0px;
+} */
+
+.cursor-pointer path {
+  stroke: #c8c8c8;
+  stroke-width: 0.5px;
+  filter: drop-shadow(0px 0px 11px rgba(0, 0, 0, 0.1));
+}
+
+text {
+  display: block;
+  white-space: nowrap;
+}
+
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+svg:not(:root) {
+  overflow-clip-margin: content-box;
+  overflow: hidden;
+}
+
+/* responsive css */
+
+
+@media only screen and (max-width: 767px) {
+  header {
+    margin-top: 35px;
+  }
+
+  .leader .pmmodi {
+    text-align: center;
+    width: auto;
+    height: auto;
+    position: inherit;
+    z-index: 5;
+    color: rgb(255, 255, 255);
+    padding: 7px;
+    border-radius: 0px;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(243, 114, 35);
+    border-image: initial;
+    background: none;
+  }
+
+  .leader .circle-1 {
+    display: none;
+  }
+
+  .leader .circle-2 {
+    display: none;
+  }
+
+
+  .servicelinksss .service-link {
+    float: none;
+    margin: auto;
+    display: grid;
+    margin-top: 33%;
+  }
+
+
+  .service-links .icon1 {
+    margin-bottom: 0;
+  }
+
+  .hexagon {
+    bottom: -0px;
+  }
+
+  .right-arrow:before {
+    content: "";
+    position: absolute;
+    right: 10%;
+    top: -270%;
+    width: 0;
+    height: 0;
+    border-top: 100px solid transparent;
+    border-left: 28px solid #adadad;
+    border-bottom: 100px solid transparent;
+    transform: rotate(90deg);
+    left: 47%;
+  }
+}
+
+
+@media only screen and (max-width: 767px) {
+  .leader {
+    position: inherit;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: 20;
+    display: grid;
+    background: rgb(29, 17, 62);
+  }
+
+  .leader>ul {
+    margin: 0px;
+  }
+
+  .leader li {
+    position: relative;
+    width: 50%;
+    float: left;
+    padding: 0px;
+  }
+
+  .leader .shape-1,
+  .leader .shape-2 {
+    width: 20px;
+  }
+
+  .section-first {
+    display: flex;
+    border-top: 1px solid rgb(133, 151, 166);
+  }
+
+
+  .bner-link li {
+    float: left;
+    text-align: center;
+    display: block !important;
+    min-height: 110px;
+    padding: 4px 0px;
+    border-top: 0px dashed rgba(255, 255, 255, 0.5);
+    border-right: 1px dashed rgba(255, 255, 255, 0.5);
+  }
+
+  .bner-link li .linkbtn .icon {
+    display: block;
+    vertical-align: middle;
+    width: 45px;
+    margin: auto;
+  }
+
+  .bner-link li .linkbtn {
+    display: block;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    transition-duration: 0.3s;
+    text-align: center;
+    text-decoration: none;
+  }
 }

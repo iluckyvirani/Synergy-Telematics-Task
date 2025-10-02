@@ -10,15 +10,6 @@ import shape7 from '../../assets/images/sl-7.png'
 import shape8 from '../../assets/images/header_left.png'
 
 
-const steps = [
-  { id: 1, text: "Know your Approvals", color: "bg-yellow-500" },
-  { id: 2, text: "Check Comprehensive list of Approvals", color: "bg-orange-600" },
-  { id: 3, text: "Registration & Account Activation", color: "bg-blue-600" },
-  { id: 4, text: "Fill Common Application Form", color: "bg-teal-500" },
-  { id: 5, text: "Apply for NOC/License", color: "bg-orange-400" },
-  { id: 6, text: "Pay Consolidated Fee", color: "bg-pink-500" },
-  { id: 7, text: "Download Issued Certificate", color: "bg-violet-600" },
-];
 
 const ApplicationProcess = () => {
   return (
@@ -37,7 +28,6 @@ const ApplicationProcess = () => {
         </div>
 
         <div className="container mx-auto relative pr-[12px] pl-[12px]">
-          {/* Title */}
           <div className='relative text-center title'>
             <h2 className="font-bakbak text-center text-2xl md:text-3xl  text-[#1d113e] relative pb-6">
               7 Steps Application Process
@@ -47,17 +37,16 @@ const ApplicationProcess = () => {
 
           {/* Steps */}
           <div className="flex flex-wrap mx-3 mt-3">
-            {/* Left 7 Steps */}
             <div className="w-full md:w-3/4 text-center relative">
               <ul className="service-link flex flex-wrap relative m-0 p-0">
-                <li className="relative box-border min-h-[350px] w-[13.5%] flex flex-col items-center text-center">
+                <li className="relative box-border sm:min-h-[350px] min-h-[210px] sm:w-[13.5%] w-[50%] flex flex-col items-center text-center">
                   <span className="icon1 relative inline-block w-10 h-10 leading-[40px] rounded-full text-white font-bold mb-6 bg-[#ffc000]">
                     1
                   </span>
                   <div className="hexagon hexagon1 bg-[#ffc000]">Know your Approvals</div>
                 </li>
 
-                <li className="relative box-border min-h-[350px] w-[13.5%] flex flex-col items-center text-center">
+                <li className="relative box-border sm:min-h-[350px] min-h-[210px] sm:w-[13.5%] w-[50%] flex flex-col items-center text-center">
                   <span className="icon1 relative inline-block w-10 h-10 leading-[40px] rounded-full text-white font-bold mb-6 bg-[#c55a11]">
                     2
                   </span>
@@ -66,7 +55,7 @@ const ApplicationProcess = () => {
                   </div>
                 </li>
 
-                <li className="relative box-border min-h-[350px] w-[13.5%] flex flex-col items-center text-center">
+                <li className="relative box-border sm:min-h-[350px] min-h-[210px] sm:w-[13.5%] w-[50%] flex flex-col items-center text-center">
                   <span className="icon1 relative inline-block w-10 h-10 leading-[40px] rounded-full text-white font-bold mb-6 bg-[#2e75b6]">
                     3
                   </span>
@@ -75,7 +64,7 @@ const ApplicationProcess = () => {
                   </div>
                 </li>
 
-                <li className="relative box-border min-h-[350px] w-[13.5%] flex flex-col items-center text-center">
+                <li className="relative box-border sm:min-h-[350px] min-h-[210px] sm:w-[13.5%] w-[50%] flex flex-col items-center text-center">
                   <span className="icon1 relative inline-block w-10 h-10 leading-[40px] rounded-full text-white font-bold mb-6 bg-[#00a3a1]">
                     4
                   </span>
@@ -84,21 +73,21 @@ const ApplicationProcess = () => {
                   </div>
                 </li>
 
-                <li className="relative box-border min-h-[350px] w-[13.5%] flex flex-col items-center text-center">
+                <li className="relative box-border sm:min-h-[350px] min-h-[210px] sm:w-[13.5%] w-[50%] flex flex-col items-center text-center">
                   <span className="icon1 relative inline-block w-10 h-10 leading-[40px] rounded-full text-white font-bold mb-6 bg-[#f68d2e]">
                     5
                   </span>
                   <div className="hexagon hexagon5 bg-[#f68d2e]">Apply for NOC/License</div>
                 </li>
 
-                <li className="relative box-border min-h-[350px] w-[13.5%] flex flex-col items-center text-center">
+                <li className="relative box-border sm:min-h-[350px] min-h-[210px] sm:w-[13.5%] w-[50%] flex flex-col items-center text-center">
                   <span className="icon1 relative inline-block w-10 h-10 leading-[40px] rounded-full text-white font-bold mb-6 bg-[#e91e63]">
                     6
                   </span>
                   <div className="hexagon hexagon6 bg-[#e91e63]">Pay Consolidated Fee</div>
                 </li>
 
-                <li className="relative box-border min-h-[350px] w-[13.5%] flex flex-col items-center text-center">
+                <li className="relative box-bordersm:min-h-[350px] min-h-[210px] sm:w-[13.5%] w-[50%] flex flex-col items-center text-center">
                   <span className="icon1 relative inline-block w-10 h-10 leading-[40px] rounded-full text-white font-bold mb-6 bg-[#7212f1]">
                     7
                   </span>
@@ -108,15 +97,13 @@ const ApplicationProcess = () => {
                 </li>
               </ul>
             </div>
-
-            {/* Right Extra Items */}
             <div className="w-full md:w-1/4 mt-0 px-3  servicelinksss">
               <div className='relative text-center'>
-                <ul className="service-link flex flex-wrap relative m-0 p-0">
+                <ul className="service-link flex  flex-wrap relative m-0 p-0">
                   <div className='right-arrow'>
 
                   </div>
-                  <li className="relative box-border min-h-[350px] w-full flex flex-col items-center text-center">
+                  <li className="relative box-border sm:min-h-[350px] min-h-[50px] w-full flex  items-center  text-center">
                     <div className="hexagon hexagon9 bg-[#f68d2e]">
                       User
                       <br />
@@ -131,11 +118,6 @@ const ApplicationProcess = () => {
 
             </div>
           </div>
-
-
-
-
-
         </div>
       </section>
     </>

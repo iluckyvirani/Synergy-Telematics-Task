@@ -11,6 +11,7 @@ import ImportantLinks from '../components/Home Components/Importantlink'
 import Footer from '../components/Footer'
 import SectorWheel from '../components/Home Components/SectorWheel'
 import SectorDetails from '../components/Home Components/SectorDetails'
+import ViewAllSectors from '../components/Home Components/ViewAllSectors'
 
 
 const HomePage = () => {
@@ -22,15 +23,20 @@ const HomePage = () => {
       <Bannersection />
       <SectionFirst />
 
-      <div className="flex flex-col lg:flex-row items-start p-6">
-        <div className="w-full lg:w-[40%] flex justify-center">
-          <SectorWheel selectedId={selectedId} onSelect={setSelectedId} />
-        </div>
+      <div className="block max-md:hidden p-6">
+        <div className="flex flex-wrap">
+          <div className="w-full md:w-4/12 p-2">
+            <SectorWheel selectedId={selectedId} onSelect={setSelectedId} />
+          </div>
 
-        <div className="w-full lg:w-[60%]">
-          <SectorDetails selectedId={selectedId} />
+          <div className="w-full md:w-8/12 p-2">
+            <SectorDetails selectedId={selectedId} />
+          </div>
         </div>
       </div>
+
+      <ViewAllSectors/>
+
 
       <ApplicationProcess />
       <IndustrialSectors />

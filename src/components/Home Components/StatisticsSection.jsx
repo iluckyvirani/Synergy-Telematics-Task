@@ -23,12 +23,12 @@ const StatisticsSection = () => {
                             <img
                                 src={license}
                                 alt="Licenses/NOCs"
-                                className="block max-w-[80%]"
+                                className="block sm:max-w-[80%]  text-center m-auto md:text-left md:m-0"
                             />
-                            <h5 className="font-bakbak mt-2 text-[#212529]">
+                            <h5 className="font-bakbak mt-2 text-[#212529] text-center m-auto md:text-left md:m-0">
                                 Licenses/NOCs Statistics
                             </h5>
-                            <ul className="Statistics mt-7 space-y-2 text-sm pl-7 text-[#212529]">
+                            <ul className="Statistics  space-y-2 text-sm pl-7 text-[#212529] w-[80%] sm:w-full text-center m-auto md:text-left md:mt-7 mt-4">
                                 <li className="relative before:absolute before:-left-[31px] before:top-1 before:w-4 before:h-4 before:bg-[#4a9a45] before:rounded">
                                     Licenses/NOCs Issued:{" "}
                                     <span className="font-medium text-[#212529]">(1829283) 88.44%</span>
@@ -53,12 +53,12 @@ const StatisticsSection = () => {
                             <img
                                 src={userfeedback}
                                 alt="User Experience"
-                                className="block max-w-[80%]"
+                                className="block max-w-[80%] text-center m-auto md:text-left md:m-0"
                             />
-                            <h5 className="font-bakbak mt-2 text-[#212529]">
+                            <h5 className="font-bakbak mt-2 text-[#212529] text-center m-auto md:text-left md:m-0">
                                 User Experience
                             </h5>
-                            <ul className="Statistics mt-7 space-y-2 text-sm pl-7 text-[#212529]">
+                            <ul className="Statistics  space-y-2 text-sm pl-7 text-[#212529] w-[80%] sm:w-full text-center m-auto md:text-left md:mt-7 mt-4">
                                 <li className="relative before:absolute before:-left-[31px] before:top-1 before:w-4 before:h-4 before:bg-green-600 before:rounded">
                                     Satisfied:{" "}
                                     <span className="font-medium text-[#212529]" >(1112660) 90.76%</span>
@@ -80,7 +80,7 @@ const StatisticsSection = () => {
                                 <img
                                     src={back}
                                     alt="Likert Background"
-                                    className="max-w-[100%]"
+                                    className="max-w-[100%] text-center m-auto md:text-left md:m-0"
                                 />
                                 <img
                                     src={arrow}
@@ -88,10 +88,10 @@ const StatisticsSection = () => {
                                     className="arrow-imgg"
                                 />
                             </div>
-                            <h5 className="font-bakbak mt-2 text-[#212529]">
+                            <h5 className="font-bakbak mt-2 text-[#212529] text-center m-auto md:text-left md:m-0">
                                 User Feedback
                             </h5>
-                            <ul className="Statistics mt-7 space-y-2 text-sm pl-7 text-[#212529]">
+                            <ul className="Statistics  space-y-2 text-sm pl-7 text-[#212529] w-[80%] sm:w-full text-center m-auto md:text-left md:mt-7 mt-4">
                                 <li className="relative before:absolute before:-left-[31px] before:top-1 before:w-4 before:h-4 before:bg-green-700 before:rounded">
                                     Excellent: <span className="font-medium text-[#212529]">(100773) 8.22%</span>
                                 </li>
@@ -112,7 +112,7 @@ const StatisticsSection = () => {
                     </div>
 
                     {/* Right Side - Image */}
-                    <div className="block w-full md:w-1/2">
+                    <div className="sm:block hidden w-full md:w-1/2 ">
                         <div className="relative ">
                             <div className="process_shape">
                                 <img

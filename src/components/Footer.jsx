@@ -7,9 +7,6 @@ import img from '../assets/images/foot-logo.png'
 const Footer = () => {
     return (
         <footer className="footer relative bg-[#1d113e] z-5 bg-repeat-x bg-cover ">
-            {/* Gradient Background Shape */}
-            {/* <div className="absolute -left-72 -top-14 w-[57%] h-[370px] -skew-x-12 shadow-2xl bg-gradient-to-r from-pink-600 to-indigo-900 z-0"></div> */}
-
             <div className="container mx-auto px-6 py-4 relative z-5">
                 <div className="grid md:grid-cols-12 gap-10">
                     {/* Left Section */}
@@ -51,9 +48,9 @@ const Footer = () => {
                     </div>
 
                     {/* Right Section */}
-                    <div className="md:col-span-8 space-y-6 pl-13 pt-8">
+                    <div className="md:col-span-8 space-y-6 sm:pl-13 pl-0 sm:pt-8 pt-0">
                         {/* Links */}
-                        <ul className="grid grid-cols-2 md:grid-cols-3 gap-2 text-white text-sm">
+                        <ul className="grid grid-cols-2  md:grid-cols-3 gap-2 text-white text-sm">
                             <li><a href="CopyrightStatement.aspx" className="hover:underline p-1" style={{color:"white"}}>Copyright Policy</a></li>
                             <li><a href="Terms.aspx" className="hover:underline p-1" style={{color:"white"}}>Terms & Conditions</a></li>
                             <li><a href="PrivacyPolicy.aspx" className="hover:underline p-1" style={{color:"white"}}>Privacy Policy</a></li>
@@ -93,7 +90,7 @@ const Footer = () => {
                             </div>
                         </div>
 
-                        <p className="text-white text-right text-sm pt-4">
+                        <p className="text-white sm:text-right text-center text-sm pt-4">
                             © 2023 - IT Solution powered by National Informatics Centre Uttar Pradesh State Unit
                         </p>
                     </div>

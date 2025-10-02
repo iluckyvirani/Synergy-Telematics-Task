@@ -1,91 +1,98 @@
+import { useState } from 'react';
 import { sectors } from '../../SectorData.js'
 
+import logo from '../../assets/images/logo.png'
+
 export default function SectorWheel({ onSelect, selectedId }) {
+    const [rotation, setRotation] = useState(0);
+
+
+    const handleSelect = (sector, index) => {
+        onSelect(sector.id);
+        console.log(sector.id, index, "dsjs")
+        const sectorsCount = sectors.length;
+
+        console.log(sectorsCount, "dsjs")
+        const anglePerSector = 360 / sectorsCount;
+
+
+        const targetAngle = 0 - (index * anglePerSector);
+
+        setRotation(targetAngle);
+    };
+
+
+    console.log(rotation, "hasghdh")
     return (
-        <svg viewBox="0 0 500 500" className="w-[500px] h-[500px] rotate-[-20deg]">
-            {/* Rotate whole wheel */}
-            <g transform="matrix(0.30902,0.95106,-0.95106,0.30902,410.49702,-65.10209)">
-                {sectors.map((sector) => {
-                    const isActive = sector.id === selectedId; // check active sector
+        <svg
+            className='Layer_1'
+            viewBox="0 0 500 500"
+        >
+            {/* Rotating group */}
+            <g 
+                style={{
+                    transform: `rotate(${rotation}deg)`,
+                    transformOrigin: "250px 250px",
+                    transition: "transform 1s ease-in-out",
+                }}
+            >
+                {sectors.map((sector, i) => {
+                    const isActive = sector.id === selectedId;
                     return (
                         <g
                             key={sector.id}
-                            className="cursor-pointer transition duration-200"
-                            onClick={() => onSelect(sector.id)}
+                            className="cursor-pointer"
+                            onClick={() => handleSelect(sector, i)}
                         >
-                            {/* Wheel slice */}
                             <path
                                 d={sector.path}
-                                className={`
-                  stroke-gray-300 stroke-[0.5px] drop-shadow-md`}
+                                className="stroke-[#c8c8c8] stroke-[0.5px]"
                                 style={{
                                     fill: isActive ? "rgb(239, 69, 99)" : "#ffffff",
                                 }}
                             />
-
-                            {/* Sector title */}
                             <text
-
                                 transform={sector.textTransform}
-                                className={`
-                  text-[11px] font-medium transition 
-                  ${isActive ? "fill-white font-bold" : "fill-black"}
-                `}
-                                textAnchor="middle"
-                                alignmentBaseline="middle"
+                                className={`text-[10px] font-normal font-roboto-condensed  ${isActive ? "fill-white font-bold" : "fill-black"
+                                    }`}
+                                dx="-1rem"
                             >
                                 {sector.title}
                             </text>
                         </g>
-                    )
+                    );
                 })}
             </g>
 
-            {/* Center Circle */}
-            <circle
-                cx="250"
-                cy="250"
-                r="41.9"
-                fill="hsl(var(--card))"
-                stroke="hsl(var(--coral))"
-                strokeWidth="2"
-                className="drop-shadow-lg"
-            />
+            <svg viewBox="0 0 500 500">
+                <defs>
+                    <clipPath id="clipCircle">
+                        <circle cx="250" cy="250" r="41.9" />
+                    </clipPath>
+                </defs>
 
-            {/* Center text */}
-            <text
-                x="250"
-                y="240"
-                textAnchor="middle"
-                fontSize="8"
-                fontWeight="bold"
-                fill="hsl(var(--coral))"
-                letterSpacing="1px"
-            >
-                POWER UP
-            </text>
-            <text
-                x="250"
-                y="252"
-                textAnchor="middle"
-                fontSize="8"
-                fontWeight="bold"
-                fill="hsl(var(--coral))"
-                letterSpacing="1px"
-            >
-                ALL
-            </text>
-            <text
-                x="250"
-                y="267"
-                textAnchor="middle"
-                fontSize="12"
-                fontWeight="bold"
-                fill="hsl(var(--primary))"
-                letterSpacing="2px"
-            >
-                SECTOR
-            </text>
+                {/* Background Circle */}
+                <circle cx="250" cy="250" r="41.9" fill="transparent" stroke='#ef45637d' stroke-width="2px" />
+
+                {/* Image inside clip */}
+                <image
+                    href={logo}
+                    x="230" y="225"
+                    width="40"
+                    height="30"
+                    clipPath="url(#clipCircle)"
+                    preserveAspectRatio="xMidYMid slice"
+                />
+
+                {/* Text */}
+                <text x="247" y="270" style={{ fontSize: "5pt", fontWeight: "bold", fill: "#EF4563" }}>
+                    ALL
+                </text>
+                <text x="227" y="280" style={{ fontSize: "8pt", fontWeight: "bold", letterSpacing: "2pt", fill: "#EF4563" }}>
+                    SECTOR
+                </text>
+            </svg>
+
         </svg>
     )
 }

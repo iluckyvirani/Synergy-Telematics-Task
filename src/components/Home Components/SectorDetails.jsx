@@ -13,7 +13,7 @@ import { sectors } from '../../SectorData.js'
 export default function SectorDetails({ selectedId }) {
   const sector = sectors.find((s) => s.id === selectedId);
   const swiperRef = useRef(null);
-  
+
   if (!sector) {
     return (
       <div className="p-8 text-center bg-white rounded-lg">
@@ -23,7 +23,7 @@ export default function SectorDetails({ selectedId }) {
   }
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg ">
+    <div className="bg-[#f2f4f9] p-6 rounded-lg shadow-lg ">
       {/* Header Section */}
       <div className="mb-6">
         <h5 className="sec-head">
@@ -38,9 +38,8 @@ export default function SectorDetails({ selectedId }) {
       </div>
 
       <h4 className="text-xl font-semibold text-gray-800 mb-4">Sector Overview</h4>
-      
+
       <div className="flex flex-col lg:flex-row gap-6">
-        {/* Image Carousel Section with Custom Navigation */}
         <div className="lg:w-5/12">
           <Swiper
             ref={swiperRef}
@@ -50,28 +49,28 @@ export default function SectorDetails({ selectedId }) {
             slidesPerView={1}
             className="rounded-lg overflow-hidden"
           >
-            {sector.images.map((img, index) => (
+            {sector?.images?.map((img, index) => (
               <SwiperSlide key={index}>
                 <div className="relative">
-                  <img 
-                    src={img} 
-                    alt={`${sector.title} ${index + 1}`} 
+                  <img
+                    src={img}
+                    alt={`${sector.title} ${index + 1}`}
                     className="w-full h-64 object-cover rounded-lg"
                   />
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
-          
+
           {/* Custom Navigation Buttons */}
           <div className="flex justify-center space-x-4 mt-4">
-            <button 
+            <button
               onClick={() => swiperRef.current?.swiper.slidePrev()}
               className="w-10 h-10 flex items-center justify-center bg-[#f14857] text-white rounded-full hover:bg-[#d93c4a] transition-colors duration-200 shadow-md"
             >
               ←
             </button>
-            <button 
+            <button
               onClick={() => swiperRef.current?.swiper.slideNext()}
               className="w-10 h-10 flex items-center justify-center bg-[#f14857] text-white rounded-full hover:bg-[#d93c4a] transition-colors duration-200 shadow-md"
             >
@@ -84,7 +83,7 @@ export default function SectorDetails({ selectedId }) {
         <div className="lg:w-7/12 keyfeature">
           <ul className="sector-key">
             {sector.keyFeatures.map((feature, index) => (
-              <li 
+              <li
                 key={index}
                 tabIndex="0"
               >
@@ -101,7 +100,7 @@ export default function SectorDetails({ selectedId }) {
               </li>
             ))}
           </ul>
-          
+
           <div className="mt-6">
             <a
               href={sector.cta.url}
@@ -109,7 +108,8 @@ export default function SectorDetails({ selectedId }) {
               rel="noopener noreferrer"
               className="btn-sector"
             >
-              {sector.cta.label}
+              More on This
+              Sector
             </a>
           </div>
         </div>

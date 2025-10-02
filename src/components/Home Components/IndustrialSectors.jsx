@@ -264,18 +264,33 @@ const sectors = [
 
 
 
+
 const chunkArray = (arr, size) => {
     return Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
         arr.slice(i * size, i * size + size)
     );
 };
 
-
 const IndustrialSectors = () => {
-    const slides = chunkArray(sectors, 5); // split into groups of 5
+    const [itemsPerSlide, setItemsPerSlide] = useState(5); 
     const [current, setCurrent] = useState(0);
 
-    // Auto slide every 4s
+    useEffect(() => {
+        const updateSize = () => {
+            if (window.innerWidth < 768) {
+                setItemsPerSlide(1); 
+            } else {
+                setItemsPerSlide(5); 
+            }
+        };
+
+        updateSize(); 
+        window.addEventListener("resize", updateSize);
+        return () => window.removeEventListener("resize", updateSize);
+    }, []);
+
+    const slides = chunkArray(sectors, itemsPerSlide);
+
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
@@ -283,64 +298,59 @@ const IndustrialSectors = () => {
         return () => clearInterval(interval);
     }, [slides.length]);
 
-
     return (
-        <>
-            <section className="relative pt-10.5 pb-21 line">
+        <section className="relative pt-10.5 pb-21 line sm:mt-0 mt-5">
+            <div className="container mx-auto relative px-3">
+                {/* Title */}
+                <div className="relative text-center title">
+                    <h2 className="font-bakbak text-2xl md:text-3xl text-[#1d113e] pb-6">
+                        Industrial Sectors
+                    </h2>
+                </div>
 
-                <div className="container mx-auto relative pr-[12px] pl-[12px]">
-                    {/* Title */}
-                    <div className='relative text-center title'>
-                        <h2 className="font-bakbak text-center text-2xl md:text-3xl  text-[#1d113e] relative pb-6">
-                            Industrial Sectors
-                        </h2>
-                    </div>
-
-                    {/* Slider */}
-                    <div className="relative max-w-6xl overflow-hidden w-full py-2">
-                        <div
-                            className="flex transition-transform duration-700 ease-in-out"
-                            style={{ transform: `translateX(-${current * 100}%)` }}
-                        >
-                            {slides.map((group, index) => (
-                                <div
-                                    key={index}
-                                    className="min-w-full flex justify-center gap-6 px-6"
-                                >
-                                    {group.map((sector, i) => (
-                                        <div
-                                            key={i}
-                                            className="group policy-card bg-white w-[220px] min-h-[170px] border border-gray-200 rounded-2xl shadow-lg flex flex-col items-center justify-center p-4 transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:border-b-4 hover:border-[#ff5722]"
-                                        >
-                                            <div className="mb-4 transition-transform duration-300 group-hover:scale-140">
-                                                {sector.icon}
-                                            </div>
-                                            <p className="text-center text-[#0d1028] font-semibold text-sm leading-tight">
-                                                {sector.title}
-                                            </p>
-                                        </div>
-
-                                    ))}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Indicators */}
-                    <div className="flex items-center justify-center mt-6 gap-2">
-                        {slides.map((_, idx) => (
+                <div className="relative  overflow-hidden w-full py-2">
+                    <div
+                        className="flex transition-transform duration-700 ease-in-out"
+                        style={{ transform: `translateX(-${current * 100}%)` }}
+                    >
+                        {slides.map((group, index) => (
                             <div
-                                key={idx}
-                                onClick={() => setCurrent(idx)}
-                                className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${current === idx ? "bg-[#352961] scale-110" : "bg-gray-400"
-                                    }`}
-                            />
+                                key={index}
+                                className="min-w-full flex justify-center gap-6 px-6"
+                            >
+                                {group.map((sector, i) => (
+                                    <div
+                                        key={i}
+                                        className="group policy-card bg-white w-[220px] min-h-[170px] border border-gray-200 rounded-2xl shadow-lg flex flex-col items-center justify-center p-4 transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:border-b-4 hover:border-[#ff5722]"
+                                    >
+                                        <div className="mb-4 transition-transform duration-300 group-hover:scale-110">
+                                            {sector.icon}
+                                        </div>
+                                        <p className="text-center text-[#0d1028] font-semibold text-sm leading-tight">
+                                            {sector.title}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
                         ))}
                     </div>
                 </div>
-            </section>
-        </>
-    )
-}
+
+                <div className="flex items-center justify-center mt-6 gap-2">
+                    {slides.map((_, idx) => (
+                        <div
+                            key={idx}
+                            onClick={() => setCurrent(idx)}
+                            className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${current === idx ? "bg-[#352961] scale-110" : "bg-gray-400"
+                                }`}
+                        />
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
+
 
 export default IndustrialSectors

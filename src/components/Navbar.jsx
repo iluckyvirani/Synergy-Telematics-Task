@@ -20,40 +20,40 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className="absolute right-49 z-[999] bg-white border-b border-[#cccccc75] px-10 py-1 transform skew-x-[40deg] shadow-md">
-                <ul className="flex items-center justify-end skew-x-[-40deg] m-0 p-0">
+            <nav className="absolute sm:right-49 right-0 top-0 z-[999] bg-white border-b border-[#cccccc75] px-10 py-1 sm:transform sm:skew-x-[40deg] transform-[inherit] shadow-md">
+                <ul className="flex items-center justify-end sm:skew-x-[-40deg] m-0 p-0">
                     {/* Home */}
                     <li className="px-4 py-1">
                         <a href="Default.aspx" title="Home" tabIndex={1}>
-                            <img src={home} alt="Home" className="w-5 h-5" />
+                            <img src={home} alt="Home" className="sm:w-5 w-full h-5 " />
                         </a>
                     </li>
 
                     {/* Skip to content */}
                     <li className="px-4 py-1">
                         <a href="#" title="Skip to Main Content" tabIndex={2}>
-                            <img src={skip} alt="Skip to Main Content" className="w-5 h-5" />
+                            <img src={skip} alt="Skip to Main Content" className="sm:w-5 w-full h-5" />
                         </a>
                     </li>
 
                     {/* Screen Reader */}
                     <li className="px-4 py-1">
                         <a href="#" title="Screen Reader Access" tabIndex={3}>
-                            <img src={reader} alt="Screen Reader Access" className="w-5 h-5" />
+                            <img src={reader} alt="Screen Reader Access" className="sm:w-5 w-full h-5" />
                         </a>
                     </li>
 
                     {/* Sitemap */}
                     <li className="px-4 py-1">
                         <a href="#" title="Sitemap" tabIndex={4}>
-                            <img src={sitemap} alt="Sitemap" className="w-5 h-5" />
+                            <img src={sitemap} alt="Sitemap" className="sm:w-5 w-full h-5" />
                         </a>
                     </li>
 
                     {/* PwD Dropdown */}
                     <li className="relative px-4 py-1 group">
                         <a href="#" title="PwD Features">
-                            <img src={pwd} alt="PwD Features" className="w-5 h-5" />
+                            <img src={pwd} alt="PwD Features" className="sm:w-5 w-full h-5" />
                         </a>
                         <ul className="absolute top-8 left-0 hidden group-hover:block bg-white border rounded shadow-md text-sm min-w-[120px]">
                             <li>
@@ -87,7 +87,7 @@ const Navbar = () => {
                     {/* Language */}
                     <li className="px-4 py-1">
                         <a href="#" title="हिन्दी संस्करण हेतु यहां क्लिक करें" tabIndex={10}>
-                            <img src={language} alt="Hindi Version" className="w-5 h-5" />
+                            <img src={language} alt="Hindi Version" className="sm:w-5 w-full h-5" />
                         </a>
                     </li>
 
@@ -134,26 +134,26 @@ const Navbar = () => {
                 <div className="w-full mx-auto px-4 md:px-8 pb-2">
                     <div className="flex flex-wrap items-center justify-between">
                         {/* Left Logo Section */}
-                        <div className="flex items-center w-3/4 md:w-7/12">
-                            <div className="w-[75px]">
+                        <div className="flex items-center w-3/4 md:w-7/12 logo">
+                            <div className="sm:w-[75px] w-[70px]">
                                 <a href="#" className="block">
                                     <img src={img} alt="Logo" className="max-w-full" />
                                 </a>
                             </div>
-                            <div className="relative pl-11">
-                                <h4 className="font-bakbak text-[2.3em] mt-[1px] mb-[2px] text-[#1d113e]">
+                            <div className="relative sm:pl-11 p-0 float-right">
+                                <h4 className="font-bakbak sm:text-[2.3em] text-lg sm:mt-[1px]  mb-[2px] sm:text-[#1d113e] text-white sm:p-0 pl-2">
                                     Nivesh Mitra
                                 </h4>
-                                <p className="text-black font-semibold text-[1.05em] pl-3">
+                                <p className="sm:text-black text-white font-semibold sm:text-[1.05em] text-sm pl-3">
                                     Single Window System, Government of Uttar Pradesh
                                 </p>
                                 {/* Decorative white shape */}
-                                <span className="absolute h-0 left-[1px] -top-2 -z-1 border-t-[106px] border-t-white border-l-[39px] border-l-transparent w-[300%]" />
+                                <span className="absolute h-0 sm:left-[1px] left-[200px] -top-2 -z-1 border-t-[106px] border-t-white border-l-[39px] border-l-transparent w-[300%]" />
                             </div>
                         </div>
 
                         {/* Right Logo Section */}
-                        <div className="flex justify-end items-center w-1/4 md:w-5/12 space-x-3">
+                        <div className="flex flex-col lg:flex-row justify-end items-center w-1/4 md:w-5/12 space-x-3">
                             <a
                                 href="https://kumbh.gov.in/"
                                 target="_blank"
@@ -163,7 +163,7 @@ const Navbar = () => {
                                     src={mahakumbh}
                                     alt="महाकुंभ प्रयागराज 2025"
                                     title="महाकुंभ प्रयागराज 2025"
-                                    className="max-w-[73px]"
+                                    className="sm:max-w-[73px] w-[60px] sm:mt-0 mt-2 sm:float-none float-left"
                                 />
                             </a>
                             <a
@@ -171,7 +171,7 @@ const Navbar = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <img src={logo} alt="Invest UP" className="max-w-[73px]" />
+                                <img src={logo} alt="Invest UP" className="sm:max-w-[73px] w-[60px] sm:mt-0 mt-2 sm:float-none float-left" />
                             </a>
                         </div>
                     </div>
